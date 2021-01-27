@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <center><h1>Finding difference between Two Dates</h1></center>
+    Date:1<input type="date" id="date1" placeholder="date1" /> 
+    Date:2<input type="date" id="date2"placeholder="date2"/>
+    <button type="button" onclick="diff_date()">Find the differnce</button>
+    <h3 id="num-days"></h3>
+    <script>
+      function diff_date() {
+        let d1 = document.querySelector("#date1").value;
+        let d2 = document.querySelector("#date2").value;
+        d1 = new Date(d1);
+        d2 = new Date(d2);
+        let Difference_In_Time = Math.abs(d2 - d1);
+        let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+        document.querySelector("#num-days").innerHTML = ("Total number of days between dates  <br>" 
+          + d1 + " and " 
+          + d2 + " is: " + Difference_In_Days
+        );
+      }
+    </script>
+  </body>
+</html>
